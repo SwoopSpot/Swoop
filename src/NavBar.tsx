@@ -44,8 +44,9 @@ function NavBar() {
       <img id='logo' src={logo} alt='logo' />
       <div className='spacer'></div>
       <div className='right'>
-        <button className='accessButton'>LOGIN</button>
-        <button className='accessButton'>SIGN UP</button>
+        <a id='loginLink' href='#'>
+          <button className='accessButton'>LOGIN</button>
+        </a>
       </div>
     </div>
   );
