@@ -1,0 +1,117 @@
+body {
+  background-color: f8f8f8;
+}
+.navBarWrapper {
+  display: flex;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  justify-content: center;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#burgerImg {
+  height: 1rem;
+  width: auto;
+}
+
+#burgerButton {
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  touch-action: manipulation;
+}
+
+.spacer {
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  float: left;
+  padding-left: 2rem;
+  padding-right: 6rem;
+}
+
+.right {
+  display: flex;
+  float: right;
+  padding-right: 2rem;
+  gap: 1rem;
+}
+
+#logo {
+  width: 4rem;
+  height: auto;
+}
+
+.accessButton {
+  // outline: 0;
+  height: 2rem;
+  width: 6rem;
+  border: #7cbd60;
+  border-radius: 1rem;
+  color: white; 
+  background-color: #7cbd60;
+  cursor: pointer;
+  position: relative;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.overlay {
+  z-index: 1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1f1f1f;
+}
+
+.growOverlay {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1f1f1f;
+  animation: growOverlayAnim .25s;
+}
+
+@keyframes growOverlayAnim {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.modalText {
+  font-weight: bold;
+  padding: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  position: relative;
+  margin-top: 10%;
+  text-align: center;
+}
+li {
+  color: white;
+  text-decoration: none;
+  list-style: none;
+}
+a {
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  line-height: 5rem;
+}
