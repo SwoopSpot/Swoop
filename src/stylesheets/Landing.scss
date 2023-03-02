@@ -1,0 +1,52 @@
+body {
+  background-color: #f8f8f8;
+}
+
+.sectionOne {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.sectionOneContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  font-weight: bold;
+}
+
+#NYCStreetImg {
+  width: 100%;
+}
+
+#carParkingImg {
+  width: auto;
+  height: 40vh;
+}
+
+.sectionTwo {
+  padding-top: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+#right {
+  padding-left: 4rem;
+  text-align: right;
+}
+
+#left {
+  padding-left: 10vw;
+  padding-right: 4rem;
+  line-height: 1.5rem;
+  p {
+    font-family: 'Montserrat', sans-serif;
+  }
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4rem;
+  }
+}
