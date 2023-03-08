@@ -29,6 +29,7 @@ function Boroughs() {
   useEffect(() => {
     getBoroughs();
   }, [user]);
+  
   return (
     <>
       {boroughs.map((current) => {
@@ -39,7 +40,7 @@ function Boroughs() {
               <img
                 className='borough'
                 src={image}
-                alt='borough'
+                alt={name}
                 onClick={() => openBorough(search)}
               ></img>
             </div>
