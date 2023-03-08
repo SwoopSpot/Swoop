@@ -19,7 +19,8 @@ function Boroughs() {
 
   async function getBoroughs() {
     try {
-      const response = await axios.get('http://localhost:3000/getBoroughs');
+      const response = await axios.get('http://localhost:3000/boroughs');
+      console.log('this is the response: ', response)
       setBoroughs(response.data);
     } catch (err) {
       // error handling here
