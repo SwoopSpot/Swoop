@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import NavBar from './NavBar';
+import Boroughs from './Boroughs';
 import './stylesheets/Main.scss';
 
 function Main() {
@@ -9,6 +10,9 @@ function Main() {
   return (
     <div className='mainContainer'>
       <NavBar />
+      <div>
+      <Boroughs />
+      </div>
     </div>
   );
 }
