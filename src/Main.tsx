@@ -1,17 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import NavBar from './NavBar';
 import Boroughs from './Boroughs';
 import './stylesheets/Main.scss';
+import axios from 'axios';
+
+interface BoroughData {
+  id: number;
+  name: string;
+  search: string;
+  image: string;
+}
 
 function Main() {
   const { user } = useAuth0();
+  const [boroughs, setBoroughs] = useState<BoroughData[]>([]);
+
+  async function getBoroughs() {
+    try {
+      const response = await axios.get('http://localhost:3000/boroughs');
+      console.log('this is the response: ', response)
+      setBoroughs(response.data);
+    } catch (err) {
+      // error handling here
+    }
+  }
+
+  useEffect(() => {
+    getBoroughs();
+  }, [user]);
+  
 
   return (
     <div className='mainContainer'>
       <NavBar />
       <div>
-      <Boroughs />
+      {/* <Boroughs data={
+        // type is BoroughData[]
+        boroughs
+        }/> */}
       </div>
     </div>
   );
