@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
-import axios from 'axios';
 
 interface BoroughData {
   id: number;
@@ -9,31 +7,29 @@ interface BoroughData {
   image: string;
 }
 
-function Boroughs() {
-  const { user } = useAuth0();
-  const [boroughs, setBoroughs] = useState<BoroughData[]>([]);
+function Boroughs({data}: {data: BoroughData[]}) {
 
-  function openBorough(search: string) {
+  function openBorough(data: string) {
     // navigate to the page depending on which one was clicked
   }
 
-  async function getBoroughs() {
-    try {
-      const response = await axios.get('http://localhost:3000/boroughs');
-      console.log('this is the response: ', response)
-      setBoroughs(response.data);
-    } catch (err) {
-      // error handling here
-    }
-  }
+  // async function getBoroughs() {
+  //   try {
+  //     const response = await axios.get('http://localhost:3000/boroughs');
+  //     console.log('this is the response: ', response)
+  //     setBoroughs(response.data);
+  //   } catch (err) {
+  //     // error handling here
+  //   }
+  // }
 
-  useEffect(() => {
-    getBoroughs();
-  }, [user]);
+  // useEffect(() => {
+  //   getBoroughs();
+  // }, [user]);
   
   return (
     <>
-      {boroughs.map((current) => {
+      {data.map((current: BoroughData) => {
         const { id, name, search, image } = current;
         return (
           <div className='boroughContainer'>
