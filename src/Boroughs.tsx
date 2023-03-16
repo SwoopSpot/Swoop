@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './stylesheets/Borough.scss';
 
 interface BoroughData {
   id: number;
@@ -9,19 +10,9 @@ interface BoroughData {
 
 function Boroughs({data}: {data: BoroughData[]}) {
 
-  function openBorough(data: string) {
-    // navigate to the page depending on which one was clicked
+  function openBorough(search: string) {
+    console.log(search);
   }
-
-  // async function getBoroughs() {
-  //   try {
-  //     const response = await axios.get('http://localhost:3000/boroughs');
-  //     console.log('this is the response: ', response)
-  //     setBoroughs(response.data);
-  //   } catch (err) {
-  //     // error handling here
-  //   }
-  // }
 
   // useEffect(() => {
   //   getBoroughs();
@@ -35,7 +26,7 @@ function Boroughs({data}: {data: BoroughData[]}) {
           <div className='boroughContainer'>
             <div key={id} className='boroughWrapper'>
               <img
-                className='borough'
+                className='boroughImage'
                 src={image}
                 alt={name}
                 onClick={() => openBorough(search)}
