@@ -18,7 +18,7 @@ function Main() {
 
   async function getBoroughs() {
     try {
-      const response = await axios.get('http://localhost:3000/boroughs');
+      const response = await axios.get('http://localhost:8080/boroughs');
       console.log('this is the response: ', response)
       setBoroughs(response.data);
     } catch (err) {
