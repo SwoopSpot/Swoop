@@ -19,7 +19,7 @@ function Main() {
   async function getBoroughs() {
     try {
       const response = await axios.get('http://localhost:8080/boroughs');
-      console.log('this is the response: ', response)
+      console.log('this is the response: ', response);
       setBoroughs(response.data);
     } catch (err) {
       // error handling here
@@ -29,16 +29,31 @@ function Main() {
   useEffect(() => {
     getBoroughs();
   }, [user]);
-  
 
   return (
     <div className='mainContainer'>
       <NavBar />
-      <div>
-      {/* <Boroughs data={
-        // type is BoroughData[]
-        boroughs
-        }/> */}
+      <div className='searchBarContainer'>
+        <div id='cover'>
+          <form method='get' action=''>
+            <div className='tb'>
+              <div className='td'>
+                <input type='text' placeholder='Search' required />
+              </div>
+              <div className='td' id='s-cover'>
+                <button type='submit'>
+                  <div id='s-circle'></div>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div className='boroughWrapperContainer'>
+        <div className='boroughWrapper'>
+          <Boroughs data={boroughs} />
+        </div>
       </div>
     </div>
   );
