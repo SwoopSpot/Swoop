@@ -19,6 +19,12 @@ body {
   width: auto;
 }
 
+#userPhoto {
+  height: 35px;
+  width: auto;
+  border-radius: 50%;
+}
+
 #burgerButton {
   outline: 0;
   border: none;
@@ -35,15 +41,16 @@ body {
 .left {
   display: flex;
   float: left;
-  padding-left: 2rem;
+  padding-left: 1rem;
   padding-right: 3rem;
 }
 
 .right {
   display: flex;
+  align-items: center;
   float: right;
-  padding-right: 2rem;
-  gap: 1rem;
+  padding-right: 1rem;
+  gap: .2rem;
 }
 
 #logo {
