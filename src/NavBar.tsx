@@ -3,11 +3,16 @@ import './stylesheets/NavBar.scss';
 import logo from './images/logo.png';
 import burger from './images/burger.png';
 import { useAuth0 } from '@auth0/auth0-react';
+import { useNavigate } from 'react-router-dom';
+
 
 function NavBar() {
   const { user, logout, loginWithRedirect } = useAuth0();
   const [modalStatus, setModalStatus] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState('LOGIN');
+  const [userPhoto, setUserPhoto] = useState<string>();
+
+  const navigate = useNavigate();
 
   function handleOpen() {
     setModalStatus(true);
@@ -23,7 +28,8 @@ function NavBar() {
   
   useEffect(() => {
     if (user) {
-      setIsLoggedIn('LOGOUT')
+      setIsLoggedIn('LOGOUT');
+      setUserPhoto(user.picture);
     } else {
       setIsLoggedIn('LOGIN')
     }
@@ -63,6 +69,9 @@ function NavBar() {
       <div className='right'>
         <button onClick={() => !user ? loginWithRedirect() : logUserOut()} className='accessButton'>
           {isLoggedIn}
+        </button>
+        <button id='profileBtn' onClick={() => navigate('/profile')}>
+          <img id='userPhoto' alt='userPhoto' src={userPhoto} />{' '}
         </button>
       </div>
     </div>

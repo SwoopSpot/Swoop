@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './stylesheets/Borough.scss';
 
 interface BoroughData {
@@ -13,10 +13,6 @@ function Boroughs({data}: {data: BoroughData[]}) {
   function openBorough(search: string) {
     console.log(search);
   }
-
-  // useEffect(() => {
-  //   getBoroughs();
-  // }, [user]);
   
   return (
     <>
@@ -24,7 +20,7 @@ function Boroughs({data}: {data: BoroughData[]}) {
         const { id, name, search, image } = current;
         return (
           <div className='boroughContainer'>
-            <div key={id} className='boroughWrapper'>
+            <div key={name+id} className='boroughWrapper'>
               <img
                 className='boroughImage'
                 src={image}
