@@ -38,10 +38,10 @@ function Main() {
           <form method='get' action=''>
             <div className='tb'>
               <div className='td'>
-                <input type='text' placeholder='Search' required />
+                <input type='text' required />
               </div>
               <div className='td' id='s-cover'>
-                <button type='submit'>
+                <button id='searchButton' type='submit'>
                   <div id='s-circle'></div>
                   <span></span>
                 </button>
