@@ -16,6 +16,8 @@ function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
+  const navigate = useNavigate();
+
   function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
     setAnchorEl(event.currentTarget);
   };
@@ -23,8 +25,6 @@ function NavBar() {
   function handleCloseDropDown() {
     setAnchorEl(null);
   };
-
-  const navigate = useNavigate();
 
   function handleOpenModal() {
     setModalStatus(true);
