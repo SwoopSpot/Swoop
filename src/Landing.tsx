@@ -13,7 +13,23 @@ function Landing() {
         <div className='sectionOneContent'>
           PARKING MADE EASY
           <br />
-          <button className='accessButton'>SEARCH</button>
+          <div className='searchBarContainer'>
+            <div id='cover'>
+              <form method='get' action=''>
+                <div className='tb'>
+                  <div className='td'>
+                    <input type='text' required />
+                  </div>
+                  <div className='td' id='s-cover'>
+                    <button id='searchButton' type='submit'>
+                      <div id='s-circle'></div>
+                      <span></span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
 
