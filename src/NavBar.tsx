@@ -13,18 +13,20 @@ function NavBar() {
   const [modalStatus, setModalStatus] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState('LOGIN');
   const [userPhoto, setUserPhoto] = useState<string>();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [toggleButton, setToggleButton] = useState('SWITCH TO HOSTING');
+
   const open = Boolean(anchorEl);
 
   const navigate = useNavigate();
 
   function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
     setAnchorEl(event.currentTarget);
-  };
-  
+  }
+
   function handleCloseDropDown() {
     setAnchorEl(null);
-  };
+  }
 
   function handleOpenModal() {
     setModalStatus(true);
@@ -37,6 +39,24 @@ function NavBar() {
   function logUserOut() {
     logout({ logoutParams: { returnTo: window.location.origin } });
   }
+
+  // this function changes users host/guest status if necessary later
+  // function handleViewChange() {
+  //   // checks the current view status of user
+  //   const stored = localStorage.getItem('view'); 
+  //   // 
+  //   if (stored === 'null') localStorage.setItem('view', 'Host');
+  //   if (stored === 'Host') {
+  //     setToggleButton('SWITCH TO GUEST')
+  //     localStorage.setItem('view', 'Guest')
+  //     navigate('/createListing')
+  //   }
+  //   if (stored === 'Guest') {
+  //     setToggleButton('SWITCH TO HOST')
+  //     localStorage.setItem('view', 'Host')
+  //     navigate('/map')
+  //   }
+  // }
 
   useEffect(() => {
     if (user) {
@@ -85,6 +105,10 @@ function NavBar() {
           {isLoggedIn}
         </button>
 
+        {/* <button onClick={() => handleViewChange()} className='accessButton'>
+          {toggleButton}
+        </button> */}
+
         <button
           id='basic-button'
           aria-controls={open ? 'basic-menu' : undefined}
@@ -95,21 +119,22 @@ function NavBar() {
           <img id='userPhoto' alt='userPhoto' src={userPhoto} />{' '}
         </button>
         <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleCloseDropDown}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleCloseDropDown}>Profile</MenuItem>
-        <MenuItem onClick={handleCloseDropDown}>My Account</MenuItem>
-        <MenuItem onClick={handleCloseDropDown}>Messages</MenuItem>
-        <MenuItem onClick={handleCloseDropDown}>Bookings</MenuItem>
-        <MenuItem onClick={handleCloseDropDown}>Manage Listings</MenuItem>
-        <MenuItem onClick={handleCloseDropDown}>Logout</MenuItem>
-      </Menu>
+          id='basic-menu'
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleCloseDropDown}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MenuItem onClick={handleCloseDropDown}>Profile</MenuItem>
+          <MenuItem onClick={handleCloseDropDown}>My Account</MenuItem>
+          <MenuItem onClick={handleCloseDropDown}>Messages</MenuItem>
+          <MenuItem onClick={handleCloseDropDown}>Bookings</MenuItem>
+          <MenuItem onClick={() => navigate('/createlisting')}>Create Listing</MenuItem>
+          <MenuItem onClick={handleCloseDropDown}>Manage Listings</MenuItem>
+          <MenuItem onClick={handleCloseDropDown}>Logout</MenuItem>
+        </Menu>
       </div>
     </div>
   );

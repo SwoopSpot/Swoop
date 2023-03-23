@@ -1,0 +1,28 @@
+.mapPage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'left right';
+}
+
+.left {
+    margin: auto;
+    line-height: 1.5rem; 
+    padding-bottom: 0.66vh;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    text-align: center;
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+.map-container {
+  height: 100vh;
+  width: 100%;
+  grid-area: right;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
