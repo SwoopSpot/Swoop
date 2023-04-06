@@ -5,7 +5,7 @@ import Main from './Main';
 import Account from './Account';
 import Maps from './Maps';
 import CreateListing from './CreateListing';
-
+import Login from './Login';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Route path='/account' element={<Account />}></Route>
       <Route path='/map' element={<Maps />}></Route>
       <Route path='/createListing' element={<CreateListing />}></Route>
-
+      <Route path='/login' element={<Login />}></Route>
     </Routes>
   );
 }

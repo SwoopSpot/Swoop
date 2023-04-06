@@ -1,5 +1,6 @@
+@import 'variables.scss';
 body {
-  background-color: #f8f8f8;
+  background-color: $off-white;
 }
 
 .sectionOne {
@@ -43,10 +44,10 @@ body {
   padding-right: 4rem;
   line-height: 1.5rem;
   p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $primary-font;
   }
   h1 {
-    font-family: 'DM Serif Display', serif;
+    font-family: $secondary-font;
     font-size: 4rem;
   }
 }
