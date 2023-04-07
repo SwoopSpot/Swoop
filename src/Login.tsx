@@ -8,7 +8,7 @@ interface ListingsData {
   id: number;
   name: string;
   image: string;
-  date: Date;
+  date: string;
   location: string;
   cost: number;
 }
