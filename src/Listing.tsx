@@ -1,9 +1,16 @@
 import React from 'react';
 
-const Listing = () => {
+interface ListingsData {
+  id: number;
+  date: Date;
+  location: string;
+  cost: number;
+}
+
+const Listing = ({data}: {data:ListingsData[]}) => {
   return (
     <div className='listingContainer'>
-      <h1>Listings</h1>
+      
     </div>
   );
 };

@@ -2,8 +2,9 @@ import './stylesheets/Login.scss'
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import { useState } from 'react';
+import Listing from './Listing';
 
-interface RentalsData {
+interface ListingsData {
   id: number;
   date: Date;
   location: string;
@@ -12,8 +13,8 @@ interface RentalsData {
 
 const Login = () => {
   const { user } = useAuth0();
-  const [rentalHistory, setRentalHistory] = useState<RentalsData[]>([]);
-  const [upcomingRentals, setUpcomingRentals] = useState<RentalsData[]>([])
+  const [rentalHistory, setRentalHistory] = useState<ListingsData[]>([]);
+  const [upcomingRentals, setUpcomingRentals] = useState<ListingsData[]>([])
 
 
   const getUserBookings = async() => {
@@ -25,7 +26,7 @@ const Login = () => {
       const old:[] = []
       // loops through all bookings and sorts them into upcoming rentals or old rentals
       // friggen typescript, can't get loop below to work.
-      // data.forEach((booking: RentalsData) => {
+      // data.forEach((booking: ListingsData) => {
       //   const currentDate = new Date();
       //   if (booking.date >= currentDate) {
       //     upcoming.push(booking)
@@ -47,6 +48,7 @@ const Login = () => {
       </div>
       <div className="middleContainer">
         <h1>Upcoming Rentals </h1>
+        <Listing data={upcomingRentals} />
         <div className="upcomingContainer">
           <h2>Rental Example</h2>
         </div>
@@ -55,6 +57,7 @@ const Login = () => {
         <h1>History</h1>
         <div className="historyContainer">
           <h2>History Example</h2>
+          <Listing data={rentalHistory} />
         </div>
       </div>
 
