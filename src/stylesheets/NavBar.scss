@@ -1,5 +1,6 @@
+@import 'variables.scss';
 body {
-  background-color: f8f8f8;
+  background-color: #f8f8f8;
 }
 .navBarWrapper {
   display: flex;
@@ -11,7 +12,7 @@ body {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $primary-font;
 }
 
 #burgerImg {
@@ -50,7 +51,7 @@ body {
   align-items: center;
   float: right;
   padding-right: 1rem;
-  gap: .2rem;
+  gap: 0.2rem;
 }
 
 #logo {
@@ -62,10 +63,10 @@ body {
   // outline: 0;
   height: 2rem;
   width: 6rem;
-  border: #7cbd60;
+  border: $primary-green;
   border-radius: 1rem;
-  color: white; 
-  background-color: #7cbd60;
+  color: white;
+  background-color: $primary-green;
   cursor: pointer;
   position: relative;
   touch-action: manipulation;
@@ -79,7 +80,7 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #1f1f1f;
+  background-color: $off-black;
 }
 
 .growOverlay {
@@ -89,8 +90,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #1f1f1f;
-  animation: growOverlayAnim .25s;
+  background-color: $off-black;
+  animation: growOverlayAnim 0.25s;
 }
 
 @keyframes growOverlayAnim {
@@ -105,7 +106,7 @@ body {
 .modalText {
   font-weight: bold;
   padding: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $primary-font;
   color: white;
   position: relative;
   margin-top: 10%;

@@ -1,14 +1,13 @@
-
+@import 'variables.scss';
 
 .boroughImage {
-    height: 20rem;
-    width: auto;
-    filter: grayscale(100%);
-    border-radius: 1rem;
+  height: 20rem;
+  width: auto;
+  filter: grayscale(100%);
+  border-radius: 1rem;
 }
 
 .boroughImage:hover {
-    filter: grayscale(0%);
-    transform: scale(1.01);
-
+  filter: grayscale(0%);
+  transform: scale(1.01);
 }

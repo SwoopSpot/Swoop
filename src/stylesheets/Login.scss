@@ -1,0 +1,31 @@
+@import 'variables.scss';
+body {
+  font-family: $primary-font;
+}
+.loginContainer {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 2fr;
+  grid-template-areas: 'left middle right';
+  height: 100vh;
+}
+.leftContainer {
+  grid-area: left;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 1px solid black;
+  text-align: center;
+}
+.middleContainer {
+  grid-area: middle;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 1px solid red;
+  text-align: center;
+}
+.rightContainer {
+  grid-area: right;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 1px solid blue;
+  text-align: center;
+}

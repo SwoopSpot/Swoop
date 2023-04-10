@@ -1,0 +1,13 @@
+@import 'variables.scss';
+
+.listingContainer {
+  font-family: $primary-font;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid $off-black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: left;
+}
